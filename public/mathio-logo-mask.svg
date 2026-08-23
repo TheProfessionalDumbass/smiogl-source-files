@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1874 839" preserveAspectRatio="none">
+  <defs>
+    <mask id="letter-counters" maskUnits="userSpaceOnUse" x="0" y="0" width="1874" height="839">
+      <rect width="1874" height="839" fill="white"/>
+      <path d="M1017 399C1011 416 1008 437 1006 459C1005 470 1009 475 1017 475C1025 475 1029 470 1027 459C1025 437 1022 416 1017 399Z" fill="black"/>
+      <ellipse cx="1730" cy="446.5" rx="31" ry="46.5" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="1874" height="839" fill="white" mask="url(#letter-counters)"/>
+</svg>
