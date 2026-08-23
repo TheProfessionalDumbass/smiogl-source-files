@@ -90,7 +90,7 @@ export default function DashboardClient({authenticatedUser}:{authenticatedUser:A
       <nav>{[['⌂','Dashboard'],['◫','Learn'],['⚡','Quiz rooms'],['♜','Achievements'],['▥','Progress'],['◉','Math-io Mart']].map(([i,t])=><button key={t} onClick={()=>navigate(t)} className={active===t?'active':''}><i>{i}</i>{t}</button>)}</nav>
       <div className="sidebottom">
         <div className="role"><button disabled={busy} onClick={()=>void setRole('student')} className={role==='student'?'on':''}>Student</button><button disabled={busy} onClick={()=>void setRole('teacher')} className={role==='teacher'?'on':''}>Teacher</button></div>
-        <div className="profile"><span>{initials}</span><div><b>{data.user.displayName}</b><small>{role==='student'?'Grade 11 · STEM':'Mathematics teacher'}</small></div><button className="signout" onClick={()=>void signOut()}>Sign out</button></div>
+        <div className="profile"><span>{initials}</span><div><b>{data.user.displayName}</b><small>{role==='student'?'STEM STUDENT':'Mathematics teacher'}</small></div><button className="signout" onClick={()=>void signOut()}>Sign out</button></div>
       </div>
     </aside>
     <section className="content">
@@ -111,7 +111,7 @@ export default function DashboardClient({authenticatedUser}:{authenticatedUser:A
     </nav>
     {mobileMenuOpen&&<div className="mobile-menu-backdrop" onClick={()=>setMobileMenuOpen(false)}>
       <section id="mobile-account-menu" className="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="More navigation and account options" onClick={event=>event.stopPropagation()}>
-        <div className="mobile-menu-profile"><span>{initials}</span><div><b>{data.user.displayName}</b><small>{role==='student'?'Grade 11 · STEM':'Mathematics teacher'}</small></div><button className="mobile-menu-close" aria-label="Close menu" onClick={()=>setMobileMenuOpen(false)}>×</button></div>
+        <div className="mobile-menu-profile"><span>{initials}</span><div><b>{data.user.displayName}</b><small>{role==='student'?'STEM STUDENT':'Mathematics teacher'}</small></div><button className="mobile-menu-close" aria-label="Close menu" onClick={()=>setMobileMenuOpen(false)}>×</button></div>
         <div className="mobile-menu-links"><button className={active==='Progress'?'active':''} onClick={()=>navigate('Progress')}><i>▥</i><span><b>Progress</b><small>Mastery and learning history</small></span></button><button className={active==='Math-io Mart'?'active':''} onClick={()=>navigate('Math-io Mart')}><i>◉</i><span><b>Math-io Mart</b><small>Spend your earned coins</small></span></button></div>
         <div className="mobile-role"><span>Workspace</span><div><button disabled={busy} onClick={()=>void setRole('student')} className={role==='student'?'on':''}>Student</button><button disabled={busy} onClick={()=>void setRole('teacher')} className={role==='teacher'?'on':''}>Teacher</button></div></div>
         <button className="mobile-signout" onClick={()=>void signOut()}>Sign out</button>
