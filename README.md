@@ -33,10 +33,3 @@ For the complete public deployment walkthrough, see [docs/DEPLOY_SUPABASE.md](do
 - `pnpm lint`
 - `pnpm build`
 
-## Security model
-
-The browser receives only the Supabase Project URL and publishable key. Every application request also sends the signed-in user’s access token. Direct table access is revoked from browser roles; narrowly scoped PostgreSQL functions validate `auth.uid()` and apply the application’s rules atomically. No service-role key is stored in the app.
-
-Before a controlled school rollout, replace self-service teacher role selection with an administrator-maintained allowlist and complete the institution’s privacy/accessibility review.
-
-Browser visibility, focus, fullscreen, and connection events are contextual review signals. They are not proof of cheating and cannot identify which external app or site was used.
