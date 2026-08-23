@@ -59,7 +59,13 @@ export default function AuthGate() {
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
-          options: { data: { full_name: name.trim() || email.split('@')[0] } },
+          options: {
+            data: { full_name: name.trim() || email.split('@')[0] },
+            // Always return to the host where signup started. This prevents a
+            // stale Supabase Site URL (for example localhost) from taking over
+            // the confirmation flow on Cloudflare.
+            emailRedirectTo: new URL('/auth/confirm', window.location.origin).toString(),
+          },
         });
         if (error) throw error;
         setMessage(

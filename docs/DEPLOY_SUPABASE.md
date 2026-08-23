@@ -85,7 +85,7 @@ If Cloudflare assigns a different URL, update `NEXT_PUBLIC_SITE_URL` in `.env.pr
 1. Return to Supabase.
 2. Open **Authentication → URL Configuration**.
 3. Set **Site URL** to the exact Cloudflare URL Wrangler printed.
-4. Add the same URL under **Redirect URLs**. Also add `http://localhost:3000/**` while developing locally.
+4. Add the confirmation callback under **Redirect URLs**, for example `https://smiogl-mathio.YOUR-WORKERS-SUBDOMAIN.workers.dev/auth/confirm`. Also add `http://localhost:3000/auth/confirm` while developing locally. The callback must be allowlisted or Supabase falls back to the configured Site URL.
 5. Open **Authentication → Providers → Email** and keep Email/Password enabled.
 6. For a quick private demo, you may temporarily disable email confirmation. For a public deployment, keep confirmation enabled and configure your own SMTP provider before relying on it for a classroom-scale rollout.
 
