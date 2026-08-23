@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#6f55d9">
+    <title>Math-io · Offline</title>
+
+    <style>
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        background: #f8f8fb;
+        color: #172033;
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        width: min(430px, calc(100% - 40px));
+        padding: 32px;
+        border: 1px solid #e9e8ee;
+        border-radius: 18px;
+        background: white;
+        box-shadow: 0 18px 60px #35246d15;
+      }
+
+      .mark {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 13px;
+        background: #6f55d9;
+        color: white;
+        font-size: 25px;
+        font-weight: 800;
+      }
+
+      h1 {
+        font-family: Georgia, serif;
+      }
+
+      p {
+        color: #7c8494;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      button {
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 9px;
+        background: #6f55d9;
+        color: white;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="card">
+      <div class="mark">M</div>
+      <h1>You’re offline</h1>
+      <p>
+        Your installed Math-io shell is available, but account progress and
+        assessment answers are only changed after the server confirms them.
+        Reconnect to continue safely.
+      </p>
+      <button onclick="location.reload()">Try again</button>
+    </main>
+  </body>
+</html>
