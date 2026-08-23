@@ -1,14 +1,12 @@
 
 
 A public, Supabase-backed mathematics learning platform.
-
+# 
 ## Included
 
 - Supabase email/password authentication
 - PostgreSQL persistence with protected database functions and Row Level Security enabled
 - Per-user profiles, roles, progress, attempts, rewards, inventory, streaks, and achievements
-- Sequential lesson locking, adaptive hints, verification problems, revives, and the Math-io Mart
-- Teacher-created quiz rooms with up to 50 authored questions, invitation codes, polling-based live updates, and browser review signals
 - Responsive, installable PWA experience
 
 ## Stack
