@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'S.M.I.O.G.L. | Super Math-io',
     description:
-      'Learn, play, and master Grade 11 mathematics through guided lessons, verification challenges, and live quiz rooms.',
+      'Learn, play, and master mathematics through guided lessons, verification challenges, and live quiz rooms.',
     images: ['/og.png'],
   },
 };
