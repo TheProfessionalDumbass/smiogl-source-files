@@ -1,0 +1,530 @@
+:root {
+  --theme-x: 50vw;
+  --theme-y: 40px;
+  --theme-radius: 120vmax;
+}
+
+html[data-theme='dark'] {
+  --ink: #f3f0fb;
+  --muted: #aaa5ba;
+  --purple: #a995ff;
+  --line: rgba(208, 196, 255, .13);
+  --canvas: #14111d;
+  color-scheme: dark;
+}
+
+.theme-toggle {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+  width: 46px !important;
+  height: 46px !important;
+  padding: 4px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .76) !important;
+  border-radius: 50% !important;
+  background: linear-gradient(145deg, #f7f5ff, #dcd7f8) !important;
+  color: #5f6072;
+  box-shadow:
+    5px 6px 12px rgba(77, 56, 121, .14),
+    -3px -3px 9px rgba(255, 255, 255, .78),
+    inset 1px 1px 2px rgba(255, 255, 255, .92) !important;
+  cursor: pointer;
+}
+
+.theme-flat-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.theme-icon-backdrop {
+  fill: #e6e4f7;
+  transition: fill 420ms ease;
+}
+
+.theme-sun-rays {
+  fill: none;
+  stroke: #626375;
+  stroke-linecap: round;
+  stroke-width: 6;
+  transform-origin: 26px 32px;
+  transition: opacity 420ms ease, stroke 420ms ease, transform 620ms var(--spring);
+}
+
+.theme-sun-ring {
+  fill: #f7f6fb;
+  stroke: #626375;
+  stroke-width: 7;
+  transition: fill 420ms ease, stroke 420ms ease, transform 520ms var(--spring);
+  transform-origin: 26px 32px;
+}
+
+.theme-moon-left,
+.theme-moon-right {
+  transition: fill 420ms ease, transform 580ms var(--spring);
+  transform-origin: 39px 32px;
+}
+
+.theme-moon-left { fill: #8d8da5; }
+.theme-moon-right { fill: #6d6e80; }
+
+html[data-theme='dark'] .theme-toggle {
+  border-color: rgba(199, 186, 255, .2) !important;
+  background: linear-gradient(145deg, #302a43, #201c2e) !important;
+  box-shadow:
+    6px 7px 14px rgba(5, 3, 12, .42),
+    -3px -3px 8px rgba(120, 102, 178, .08),
+    inset 1px 1px 2px rgba(255, 255, 255, .09) !important;
+}
+
+html[data-theme='dark'] .theme-icon-backdrop { fill: #29243a; }
+html[data-theme='dark'] .theme-sun-rays {
+  stroke: #f5ca68;
+  opacity: .78;
+  transform: rotate(45deg) scale(.82);
+}
+html[data-theme='dark'] .theme-sun-ring {
+  fill: #332d42;
+  stroke: #efc465;
+  transform: scale(.88);
+}
+html[data-theme='dark'] .theme-moon-left {
+  fill: #b8afea;
+  transform: translateX(-3px) scale(1.06);
+}
+html[data-theme='dark'] .theme-moon-right {
+  fill: #77709d;
+  transform: translateX(-3px) scale(1.06);
+}
+
+.auth-theme-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+}
+
+html[data-theme='dark'] body {
+  --keyboard-background: rgba(31, 27, 43, .98);
+  --keyboard-border: rgba(196, 181, 255, .14);
+  --keyboard-toolbar-text: #b3adc2;
+  --keyboard-toolbar-text-active: #b6a4ff;
+  --keyboard-toolbar-background-hover: rgba(178, 158, 255, .1);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(96, 54, 119, .22), transparent 28rem),
+    radial-gradient(circle at 34% 28%, rgba(47, 68, 112, .22), transparent 34rem),
+    linear-gradient(145deg, #17131f, #100e17 52%, #1a1420);
+}
+
+html[data-theme='dark'] .sidebar {
+  border-right-color: rgba(202, 187, 255, .1);
+  background: rgba(25, 21, 36, .9);
+  box-shadow: 18px 0 45px rgba(0, 0, 0, .22), inset -1px 0 rgba(220, 208, 255, .05);
+}
+
+html[data-theme='dark'] .content > header {
+  border-bottom-color: rgba(202, 187, 255, .09);
+  background: rgba(20, 17, 29, .68);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .13);
+}
+
+html[data-theme='dark'] .wallet > span,
+html[data-theme='dark'] .wallet > button:not(.theme-toggle) {
+  border-color: rgba(203, 189, 255, .12);
+  background: linear-gradient(145deg, rgba(49, 43, 67, .92), rgba(30, 26, 42, .9));
+  box-shadow:
+    5px 6px 12px rgba(0, 0, 0, .28),
+    -2px -2px 7px rgba(176, 153, 255, .04),
+    inset 1px 1px 2px rgba(255, 255, 255, .06);
+}
+
+html[data-theme='dark'] .sidebar nav button { color: #aaa4b8; }
+html[data-theme='dark'] .sidebar nav .active {
+  border-color: rgba(194, 179, 255, .16);
+  background: linear-gradient(145deg, #332b49, #211c31);
+  color: #c3b4ff;
+  box-shadow: 7px 8px 16px rgba(0, 0, 0, .3), inset 1px 1px 2px rgba(255, 255, 255, .06);
+}
+
+html[data-theme='dark'] .role,
+html[data-theme='dark'] .mobile-role > div {
+  border-color: rgba(207, 193, 255, .1);
+  background: #191621;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, .32), inset -3px -3px 8px rgba(177, 156, 255, .04);
+}
+
+html[data-theme='dark'] .role .on,
+html[data-theme='dark'] .mobile-role button.on {
+  background: linear-gradient(145deg, #39304f, #282237);
+  color: #c5b6ff;
+  box-shadow: 4px 5px 9px rgba(0, 0, 0, .28), inset 1px 1px 2px rgba(255, 255, 255, .07);
+}
+
+html[data-theme='dark'] .profile { border-top-color: rgba(205, 192, 255, .1); }
+html[data-theme='dark'] .profile > span,
+html[data-theme='dark'] .mobile-menu-profile > span {
+  background: linear-gradient(145deg, #59458a, #392d5c);
+  color: #f4f0ff;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, .3);
+}
+
+html[data-theme='dark'] .stats article,
+html[data-theme='dark'] .challenge,
+html[data-theme='dark'] .activity,
+html[data-theme='dark'] .unit,
+html[data-theme='dark'] .practice,
+html[data-theme='dark'] .livecard,
+html[data-theme='dark'] .createcard,
+html[data-theme='dark'] .joincard,
+html[data-theme='dark'] .notice,
+html[data-theme='dark'] .mastery article,
+html[data-theme='dark'] .history,
+html[data-theme='dark'] .teacherstats article,
+html[data-theme='dark'] .monitor,
+html[data-theme='dark'] .badges article {
+  border-color: rgba(204, 190, 255, .12);
+  background: linear-gradient(145deg, rgba(42, 37, 57, .97), rgba(27, 24, 38, .98));
+  box-shadow:
+    11px 13px 24px rgba(0, 0, 0, .29),
+    -5px -5px 16px rgba(143, 120, 215, .035),
+    inset 1px 1px 2px rgba(255, 255, 255, .055),
+    inset -3px -3px 7px rgba(0, 0, 0, .12);
+}
+
+html[data-theme='dark'] .stats article::after {
+  background: rgba(171, 150, 255, .055);
+  box-shadow: inset 8px 8px 16px rgba(205, 192, 255, .025);
+}
+
+html[data-theme='dark'] .stats i,
+html[data-theme='dark'] .num,
+html[data-theme='dark'] .unit > span,
+html[data-theme='dark'] .teacherstats article > i,
+html[data-theme='dark'] .badges article > span,
+html[data-theme='dark'] .ring {
+  border-color: rgba(202, 187, 255, .13);
+  background: linear-gradient(145deg, #3a334c, #252131);
+  box-shadow: 5px 6px 11px rgba(0, 0, 0, .3), inset 1px 1px 2px rgba(255, 255, 255, .06);
+}
+
+html[data-theme='dark'] .violet { background: #3c315e; color: #b7a5ff; }
+html[data-theme='dark'] .gold { background: #463a27; color: #f1c567; }
+html[data-theme='dark'] .mint { background: #203c34; color: #72d5ac; }
+html[data-theme='dark'] .peach { background: #463126; color: #f1a47d; }
+
+html[data-theme='dark'] .lessons {
+  border-color: rgba(202, 187, 255, .1);
+  background: rgba(15, 13, 22, .58);
+  box-shadow: inset 6px 6px 13px rgba(0, 0, 0, .32), inset -4px -4px 12px rgba(159, 137, 225, .035);
+}
+
+html[data-theme='dark'] .lessons .current,
+html[data-theme='dark'] .unit.open,
+html[data-theme='dark'] .badges article.earned {
+  border-color: rgba(183, 163, 255, .21);
+  background: linear-gradient(145deg, #3c3155, #261f38);
+  box-shadow: 8px 9px 17px rgba(0, 0, 0, .31), inset 1px 1px 2px rgba(255, 255, 255, .07);
+}
+
+html[data-theme='dark'] .current .num,
+html[data-theme='dark'] .unit.open > span {
+  background: linear-gradient(145deg, #9179ef, #5c45ad);
+  color: #fff;
+  box-shadow: 5px 6px 11px rgba(0, 0, 0, .32), inset 2px 2px 3px rgba(255, 255, 255, .14);
+}
+
+html[data-theme='dark'] .unit.done > span {
+  background: linear-gradient(145deg, #315947, #1d3c31);
+  color: #83ddb7;
+}
+
+html[data-theme='dark'] .art {
+  border-color: rgba(204, 190, 255, .13);
+  background: linear-gradient(145deg, #41375d, #2b2540 52%, #422a3e);
+  box-shadow: inset 6px 6px 14px rgba(0, 0, 0, .3), inset -4px -4px 12px rgba(183, 161, 255, .05);
+  color: #b6a2ff;
+}
+
+html[data-theme='dark'] .tokenrow b,
+html[data-theme='dark'] .levelbadge,
+html[data-theme='dark'] .mini > span,
+html[data-theme='dark'] .codebutton {
+  border-color: rgba(200, 184, 255, .14);
+  background: linear-gradient(145deg, #393149, #252030);
+  color: #bbaaff;
+  box-shadow: 5px 6px 11px rgba(0, 0, 0, .28), inset 1px 1px 2px rgba(255, 255, 255, .06);
+}
+
+html[data-theme='dark'] .outline,
+html[data-theme='dark'] .primary,
+html[data-theme='dark'] .lessons article > button,
+html[data-theme='dark'] .challenge > button,
+html[data-theme='dark'] .unit button,
+html[data-theme='dark'] .createcard button,
+html[data-theme='dark'] .practicefoot button,
+html[data-theme='dark'] .livecard > button,
+html[data-theme='dark'] .joincard button,
+html[data-theme='dark'] .shop button,
+html[data-theme='dark'] .reviewgate button {
+  border-color: rgba(211, 201, 255, .17);
+  background: linear-gradient(145deg, #8e75ec, #6048b6);
+  color: #fff;
+  box-shadow: 7px 8px 15px rgba(0, 0, 0, .27), inset 1px 1px 2px rgba(255, 255, 255, .14);
+}
+
+html[data-theme='dark'] .answers button,
+html[data-theme='dark'] .question > input,
+html[data-theme='dark'] .createcard input:not([type=checkbox]),
+html[data-theme='dark'] .createcard select,
+html[data-theme='dark'] .createcard textarea,
+html[data-theme='dark'] .joincard input,
+html[data-theme='dark'] .authcard input,
+html[data-theme='dark'] .math-answer {
+  border-color: rgba(202, 187, 255, .12);
+  background: rgba(18, 16, 25, .72);
+  color: #f2eff9;
+  box-shadow: inset 4px 5px 9px rgba(0, 0, 0, .34), inset -3px -3px 8px rgba(166, 145, 226, .035);
+}
+
+html[data-theme='dark'] .answers .chosen {
+  border-color: rgba(218, 207, 255, .2);
+  background: linear-gradient(145deg, #8e75ec, #6048b6);
+  color: #fff;
+}
+
+html[data-theme='dark'] .createcard input:focus,
+html[data-theme='dark'] .createcard select:focus,
+html[data-theme='dark'] .createcard textarea:focus,
+html[data-theme='dark'] .joincard input:focus,
+html[data-theme='dark'] .question > input:focus,
+html[data-theme='dark'] .authcard input:focus,
+html[data-theme='dark'] .math-answer:focus-within {
+  background: rgba(43, 36, 60, .9);
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, .24), 0 0 0 4px rgba(153, 130, 241, .12);
+}
+
+html[data-theme='dark'] .lessoncopy,
+html[data-theme='dark'] .question-editor,
+html[data-theme='dark'] .room-question-summary {
+  border-color: rgba(203, 188, 255, .11);
+  background: rgba(18, 15, 26, .54);
+  box-shadow: inset 5px 6px 12px rgba(0, 0, 0, .25);
+}
+
+html[data-theme='dark'] .lessoncopy code,
+html[data-theme='dark'] .formula-panel {
+  border-color: rgba(207, 192, 255, .12);
+  background: rgba(65, 54, 91, .5);
+  color: #d1c5ff;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, .22);
+}
+
+html[data-theme='dark'] .formula-display { color: #e4dcff; }
+
+html[data-theme='dark'] .hintbox,
+html[data-theme='dark'] .feedback,
+html[data-theme='dark'] .reviewgate,
+html[data-theme='dark'] .waiting {
+  border-color: rgba(240, 197, 103, .18);
+  background: linear-gradient(145deg, #453b25, #2e281c);
+  color: #eed69d;
+  box-shadow: 6px 7px 14px rgba(0, 0, 0, .25), inset 1px 1px 2px rgba(255, 255, 255, .04);
+}
+
+html[data-theme='dark'] .feedback.correct,
+html[data-theme='dark'] .quiz-complete {
+  border-color: rgba(111, 215, 171, .17);
+  background: linear-gradient(145deg, #234337, #192f28);
+  color: #93dfbf;
+}
+
+html[data-theme='dark'] .monitorhead,
+html[data-theme='dark'] .monitor footer {
+  background: rgba(17, 14, 24, .55);
+}
+html[data-theme='dark'] .monitorhead,
+html[data-theme='dark'] .monitorrow,
+html[data-theme='dark'] .history > div { border-color: rgba(207, 192, 255, .09); }
+
+html[data-theme='dark'] .mobile-nav {
+  border-color: rgba(209, 196, 255, .14);
+  background: rgba(26, 22, 36, .94);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, .46), inset 1px 1px 2px rgba(255, 255, 255, .05);
+}
+html[data-theme='dark'] .mobile-nav button { color: #aaa3b7; }
+html[data-theme='dark'] .mobile-nav button.active {
+  background: linear-gradient(145deg, #8e75ec, #6048b6);
+  color: #fff;
+}
+
+html[data-theme='dark'] .mobile-menu-backdrop { background: rgba(5, 4, 8, .65); }
+html[data-theme='dark'] .mobile-menu-panel {
+  border-color: rgba(203, 188, 255, .13);
+  background: linear-gradient(145deg, #2c263b, #191621);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .56);
+}
+html[data-theme='dark'] .mobile-menu-links > button,
+html[data-theme='dark'] .mobile-menu-close,
+html[data-theme='dark'] .mobile-signout {
+  border-color: rgba(205, 190, 255, .11);
+  background: rgba(255, 255, 255, .045);
+  color: #d9d2e8;
+}
+html[data-theme='dark'] .mobile-menu-links > button.active {
+  border-color: #8068dc;
+  background: #392e52;
+  color: #c7b9ff;
+}
+
+html[data-theme='dark'] .modalback { background: rgba(5, 4, 8, .76); }
+html[data-theme='dark'] .modal {
+  border-color: rgba(206, 192, 255, .14);
+  background:
+    radial-gradient(circle at 90% 4%, rgba(104, 55, 97, .18), transparent 18rem),
+    linear-gradient(145deg, #292337, #17141f);
+  box-shadow: 24px 28px 70px rgba(0, 0, 0, .55), inset 1px 1px 2px rgba(255, 255, 255, .05);
+}
+html[data-theme='dark'] .modal .close {
+  border-color: rgba(203, 190, 255, .12);
+  background: linear-gradient(145deg, #3a324b, #211d2b);
+  color: #f2edf9;
+  box-shadow: 5px 6px 11px rgba(0, 0, 0, .3);
+}
+
+html[data-theme='dark'] .authpage {
+  background:
+    radial-gradient(circle at 18% 15%, #6652bd 0, transparent 32%),
+    linear-gradient(140deg, #3b2c88, #18112f 58%, #121019 58%);
+}
+html[data-theme='dark'] .authcard {
+  border-color: rgba(207, 194, 255, .13);
+  background: linear-gradient(145deg, #2b2538, #1b1724);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .38);
+}
+html[data-theme='dark'] .authcard label { color: #c3bdcd; }
+html[data-theme='dark'] .authmessage {
+  background: #352b4e;
+  color: #c9bcff;
+}
+html[data-theme='dark'] .authswitch { color: #b7a5ff; }
+html[data-theme='dark'] .loading {
+  background:
+    radial-gradient(circle at 55% 30%, rgba(104, 55, 97, .2), transparent 22rem),
+    linear-gradient(145deg, #1b1724, #100e16);
+}
+html[data-theme='dark'] .loading-brand small { color: #aaa5b8; }
+
+html[data-theme='dark'] :is(
+  .greeting p, .title p, .featurehead p, .unit small, .practice > small,
+  .mastery small, .teacherstats small, .question > small, .modal .eyebrow,
+  .formula-panel > span, .question-editor-heading small, .room-question-summary p
+) { color: #aa96fa; }
+
+html[data-theme='dark'] :is(
+  .greeting span, .featurehead > div > span, .stats p, .stats small, .lessons p,
+  .challenge p, .unit p, .practice p, .livecard p, .notice p, .mastery p,
+  .teacherstats p, .history span, .history small, .badges p, .math-answer-help,
+  .createcard-heading p, .question-actions small, .mobile-menu-profile small,
+  .mobile-menu-links small, .profile small, .wallet small
+) { color: #aaa5b8; }
+
+html[data-theme='dark'] .room-question-summary ol { color: #d3cedd; }
+html[data-theme='dark'] .lesson-progress { color: #aa96fa; }
+html[data-theme='dark'] .bar,
+html[data-theme='dark'] .progress { background: #211c2d; }
+html[data-theme='dark'] .chart { border-color: rgba(205, 190, 255, .1); }
+html[data-theme='dark'] .chart > span { background: #3c3352; }
+
+.theme-changing body,
+.theme-changing .sidebar,
+.theme-changing .content > header,
+.theme-changing .authpage,
+.theme-changing .authcard,
+.theme-changing .mobile-nav,
+.theme-changing .mobile-menu-panel,
+.theme-changing .modal,
+.theme-changing .stats article,
+.theme-changing .challenge,
+.theme-changing .unit,
+.theme-changing .lessons,
+.theme-changing .theme-toggle {
+  transition: background 480ms ease, background-color 480ms ease, color 400ms ease,
+    border-color 440ms ease, box-shadow 480ms ease !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: theme-old-fade 760ms cubic-bezier(.16, 1, .3, 1) both;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-reveal 760ms cubic-bezier(.16, 1, .3, 1) both;
+}
+
+::view-transition-group(root) {
+  animation-duration: 760ms;
+}
+
+::view-transition-image-pair(root) {
+  isolation: auto;
+}
+
+@keyframes theme-reveal {
+  0% {
+    clip-path: circle(0 at var(--theme-x) var(--theme-y));
+    opacity: .96;
+  }
+  88% {
+    clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
+    opacity: 1;
+  }
+}
+
+@keyframes theme-old-fade {
+  0%, 68% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover .theme-flat-icon { transform: rotate(-5deg) scale(1.06); }
+  html[data-theme='dark'] .stats article:hover,
+  html[data-theme='dark'] .unit:not(.locked):hover,
+  html[data-theme='dark'] .livecard:hover,
+  html[data-theme='dark'] .badges article:hover,
+  html[data-theme='dark'] .mastery article:hover,
+  html[data-theme='dark'] .teacherstats article:hover {
+    box-shadow: 16px 20px 34px rgba(0, 0, 0, .38), inset 1px 1px 2px rgba(255, 255, 255, .06);
+  }
+  html[data-theme='dark'] .lessons article:hover,
+  html[data-theme='dark'] .history > div:hover { background: rgba(183, 163, 255, .055); }
+  html[data-theme='dark'] .lessons .current:hover { background: linear-gradient(145deg, #43375e, #2b2340); }
+}
+
+@media (max-width: 850px) {
+  .auth-theme-toggle { top: 18px; right: 18px; }
+  html[data-theme='dark'] .authpage { background: #121019; }
+  html[data-theme='dark'] .authintro {
+    background:
+      radial-gradient(circle at 12% 5%, #6652bd 0, transparent 42%),
+      linear-gradient(145deg, #3b2c88, #1c143b);
+  }
+}
+
+@media (max-width: 700px) {
+  .theme-toggle { width: 39px !important; height: 39px !important; padding: 3px !important; }
+  .wallet { gap: 6px; }
+  .wallet > span { padding-inline: 8px; }
+  .wallet > span:nth-child(3) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

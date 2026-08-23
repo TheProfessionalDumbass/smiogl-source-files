@@ -6,6 +6,7 @@ import './forms.css';
 import './clay.css';
 import './auth.css';
 import './responsive.css';
+import './theme.css';
 import { ServiceWorkerRegister } from './service-worker-register';
 
 const geistSans = Geist({
@@ -38,13 +39,29 @@ export const metadata: Metadata = {
   },
 };
 
+const themeInitScript = `(() => {
+  try {
+    const saved = localStorage.getItem('mathio-theme');
+    const theme = saved === 'light' || saved === 'dark'
+      ? saved
+      : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  } catch (_) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

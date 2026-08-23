@@ -20,7 +20,7 @@ A public, Supabase-backed mathematics learning platform.
 ## Quick local setup
 
 1. Create a free Supabase project.
-2. On a new/empty Supabase project, run `supabase/migrations/20260823000000_initial.sql` in the Supabase SQL Editor. This is the complete fresh-install query.
+2. On a new/empty Supabase project, run the files in `supabase/migrations` in timestamp order in the Supabase SQL Editor. Existing projects only need migrations newer than the last one already applied.
 3. Copy `.env.example` to `.env.local` and fill in the Project URL and publishable key.
 4. Run `pnpm install`.
 5. Run `pnpm dev`.
@@ -32,4 +32,3 @@ For the complete public deployment walkthrough, see [docs/DEPLOY_SUPABASE.md](do
 - `pnpm exec tsc --noEmit`
 - `pnpm lint`
 - `pnpm build`
-

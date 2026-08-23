@@ -8,8 +8,8 @@ Supabase hosts this app’s authentication and database, but it does not host a 
 2. Choose the **Free** plan, enter a project name such as `smiogl-mathio`, create a strong database password, and choose the closest region.
 3. Wait for the project to finish provisioning.
 4. Open **SQL Editor** and select **New query**.
-5. Open `supabase/migrations/20260823000000_initial.sql` from this project, copy all of it into the query, and select **Run**. Use this complete query on a new/empty Supabase project.
-6. Confirm that the query finishes successfully. This creates the tables, starter lessons, security rules, application functions, and support for up to 50 teacher-authored questions in each room.
+5. Open each file in `supabase/migrations` in timestamp order, copy it into the query, and select **Run** before moving to the next file.
+6. Confirm that every query finishes successfully. This creates the tables, expanded lesson problem banks, security rules, application functions, and support for up to 50 teacher-authored questions in each room.
 
 ## 2. Get the two public Supabase values
 
@@ -94,17 +94,18 @@ If Cloudflare assigns a different URL, update `NEXT_PUBLIC_SITE_URL` in `.env.pr
 Use a private/incognito browser window and test the public URL:
 
 1. Create a new student account and confirm the email.
-2. Complete the first practice problem and its verification problem.
+2. Complete the first lesson's practice and verification sets.
 3. Switch a second account to Teacher, choose a question count greater than one, complete each problem card, create the quiz room, and copy the invite code.
 4. Join that code from the student account.
 5. Start and close the room from the teacher account.
 
 ## Updating later
 
-If the Supabase project was created before support for multiple teacher-authored questions, first run this file once in **Supabase Dashboard → SQL Editor**:
+Run every migration newer than the last one applied to the project once in **Supabase Dashboard → SQL Editor**. For this update, that includes:
 
 ```text
 supabase/migrations/20260823010000_multiple_room_questions.sql
+supabase/migrations/20260824000000_expanded_lesson_practice.sql
 ```
 
 After making changes, run:

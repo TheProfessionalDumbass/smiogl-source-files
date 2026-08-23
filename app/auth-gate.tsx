@@ -4,6 +4,7 @@ import type { Session } from '@supabase/supabase-js';
 import { FormEvent, useEffect, useState } from 'react';
 import DashboardClient from './dashboard-client';
 import { BrandLogo } from './brand-logo';
+import { ThemeToggle } from './theme-toggle';
 import { getSupabaseBrowserClient } from '@/lib/supabase-client';
 
 export default function AuthGate() {
@@ -96,6 +97,7 @@ export default function AuthGate() {
 
   return (
     <main className="authpage">
+      <ThemeToggle className="auth-theme-toggle" />
       <section className="authintro">
         <div className="authbrand"><BrandLogo priority /></div>
         <p>MADE FOR SENIOR HIGH MATH*</p>
