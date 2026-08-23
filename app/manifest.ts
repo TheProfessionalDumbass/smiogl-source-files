@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'S.M.I.O.G.L. — Super Math-io',
     short_name: 'Math-io',
-    description: 'Game-based mathematics learning for Grade 11 STEM.',
+    description: 'Game-based mathematics learning for a STEM Student.',
     start_url: '/',
     display: 'standalone',
     background_color: '#f8f8fb',

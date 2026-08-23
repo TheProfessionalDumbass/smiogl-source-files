@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'S.M.I.O.G.L. | Super Math-io',
   description:
-    'A game-based mathematics learning platform for Grade 11 STEM students and their teachers.',
+    'A game-based mathematics learning platform for a STEM Student and their teachers.',
   openGraph: {
     title: 'S.M.I.O.G.L. | Super Math-io',
     description:
